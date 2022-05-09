@@ -14,7 +14,7 @@ class Cuenta{
     private $objPersona;
 
 
-    public function __constructor($saldoInicial , $objDuenio){
+    public function __construct($saldoInicial , $objDuenio){
        $this->saldoReal = $saldoInicial;
        $this->objPersona = $objDuenio;
     }
@@ -37,7 +37,7 @@ class Cuenta{
 
     public function __toString(){
         $info = "
-        SALDO DE CUENTA: {$this->getSaldoReal()}
+        SALDO DE CUENTA: $ {$this->getSaldoReal()}
         DATOS DEL DUEÑO: {$this->getObjPersona()}
         ";
         return $info; 
