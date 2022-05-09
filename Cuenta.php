@@ -36,11 +36,8 @@ class Cuenta{
     }
 
     public function __toString(){
-        $cash = $this->getSaldoReal();
-
-        
         $info = "
-        SALDO DE CUENTA: {$cash}
+        SALDO DE CUENTA: {$this->getSaldoReal()}
         DATOS DEL DUEÑO: {$this->getObjPersona()}
         ";
         return $info; 
