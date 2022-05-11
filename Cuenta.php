@@ -10,12 +10,11 @@ descubierto*/
 
 
 class Cuenta{
-    private $saldoReal;
+    private $saldoReal = 0;
     private $objPersona;
 
 
-    public function __construct($saldoInicial , $objDuenio){
-       $this->saldoReal = $saldoInicial;
+    public function __construct($objDuenio){
        $this->objPersona = $objDuenio;
     }
 

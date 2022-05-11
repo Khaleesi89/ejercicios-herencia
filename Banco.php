@@ -100,7 +100,7 @@ class Banco{
             $clienteParcial = $totalClientes[$i];
             $numeroClientecito = $clienteParcial->getNroCliente();
             if($numeroCliente == $numeroClientecito){
-
+                
             }
             
             $i++;
