@@ -90,16 +90,39 @@ class Banco{
     }
 
 
-    //Agregar una nueva Cuenta a la colección de cuentas, verificando que el cliente dueño de la cuenta es cliente del Banco
-    public function incorporaCuentaCorriente($numeroCliente){
-        $totalClientes = $this->getColeccionCliente();             //PREGUNTAR QUE PASA SI NO LO ENCUENTRA...Q HACEMOS....Y LA NUEVA CUENTA DE DONDE VIENE..NO ESTA EL PARAMETRO
+    //Agregar una nueva Cuenta corriente a la colección de cuentas, verificando que el cliente dueño de la cuenta es cliente del Banco
+    public function incorporaCuentaCorriente($numeroCliente, $giro){
+        $totalClientes = $this->getColeccionCliente();            
+        $i = 0;
+        $totalitoArray = count($totalClientes);
+        $bandera = true;
+        while ($bandera && $i < $totalitoArray){
+            $clienteParcial = $totalClientes[$i];
+            $numeroClientecito = $clienteParcial->getNroCliente();
+            if($numeroCliente == $numeroClientecito){
+                $colexCtaCte = $this->getColeccionCuentaCorriente();
+                $cuentaCreada = new CuentaCorriente ($clienteParcial,$giro);
+                array_push ($colexCtaCte,$cuentaCreada);
+                $this->setColeccionCuentaCorriente($colexCtaCte);
+                $bandera = false;
+            }
+            $i++;
+        }
+    }
+
+
+
+    //Agregar una nueva Caja de Ahorro a la colección de cajas de ahorro, verificando que el cliente dueño de la cuenta es cliente del Banco.
+   
+    public function incorporarCajaAhorro($nroCliente){
+        $totalClientes = $this->getColeccionCliente();            
         $i = 0;
         $totalitoArray = count($totalClientes);
         $banderin = true;
         while ($banderin && $i < $totalitoArray){
             $clienteParcial = $totalClientes[$i];
             $numeroClientecito = $clienteParcial->getNroCliente();
-            if($numeroCliente == $numeroClientecito){
+            if($nroCliente == $numeroClientecito){
                 $colexCajaAhorrooo = $this->getColeccionCajaAhorro();
                 $cuentaCreada = new CajaDeAhorro($clienteParcial);
                 array_push($colexCajaAhorrooo,$cuentaCreada);
@@ -112,15 +135,12 @@ class Banco{
 
 
 
-    //Agregar una nueva Caja de Ahorro a la colección de cajas de ahorro, verificando que el cliente dueño de la cuenta es cliente del Banco.
-    public function incorporarCajaAhorro($nroCliente){
-
-    }
-
-
 
     //Dado un número de Cuenta y un monto, realizar depósito.
     public function realizarDeposito($numCuenta, $cash){
+        $arrayCuentasTotales1 = $this->getColeccionCajaAhorro();
+        $arrayCuentasTotales2 = $this->getColeccionCuentaCorriente();
+        $arrayTotal = array_merge()
 
     }
 

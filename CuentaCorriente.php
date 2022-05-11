@@ -11,8 +11,8 @@ class CuentaCorriente extends Cuenta{
     private $giroDescubierto;
 
 
-    public function __construct($dineroCash , $objPersonita,$montoDescubierto){
-            parent::__construct ($dineroCash , $objPersonita);
+    public function __construct($objPersonita,$montoDescubierto){
+            parent::__construct ($objPersonita);
             $this->giroDescubierto = $montoDescubierto;
                     
     }
