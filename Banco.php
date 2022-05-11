@@ -75,7 +75,39 @@ class Banco{
         return $info;
     }
 
+    //permite agregar un nuevo cliente al Banco
+    public function incorporarCliente($objCliente){
 
+    }
+
+
+
+
+    //Agregar una nueva Cuenta a la colección de cuentas, verificando que el cliente dueño de la cuenta es cliente del Banco
+    public function incorporaCuentaCorriente($numeroCliente){
+
+    }
+
+
+
+    //Agregar una nueva Caja de Ahorro a la colección de cajas de ahorro, verificando que el cliente dueño de la cuenta es cliente del Banco.
+    public function incorporarCajaAhorro($nroCliente){
+
+    }
+
+
+
+    //Dado un número de Cuenta y un monto, realizar depósito.
+    public function realizarDeposito($numCuenta, $cash){
+
+    }
+
+
+    
+    //Dado un número de Cuenta y un monto, realizar retiro.
+    public function realizarRetiro($numberCuenta, $money){
+
+    }
     
     
 
