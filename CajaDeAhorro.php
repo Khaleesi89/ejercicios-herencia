@@ -10,8 +10,8 @@ descubierto
 class CajaDeAhorro extends Cuenta{
    
     
-    public function __construct($saldo, $objDue){
-        parent::__construct($saldo , $objDue);
+    public function __construct($objDue){
+        parent::__construct($objDue);
                 
     }
 

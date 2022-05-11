@@ -100,9 +100,12 @@ class Banco{
             $clienteParcial = $totalClientes[$i];
             $numeroClientecito = $clienteParcial->getNroCliente();
             if($numeroCliente == $numeroClientecito){
-                
+                $colexCajaAhorrooo = $this->getColeccionCajaAhorro();
+                $cuentaCreada = new CajaDeAhorro($clienteParcial);
+                array_push($colexCajaAhorrooo,$cuentaCreada);
+                $this->setColeccionCajaAhorro($colexCajaAhorrooo);
+                $banderin = false;
             }
-            
             $i++;
         }
     }
