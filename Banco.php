@@ -77,15 +77,34 @@ class Banco{
 
     //permite agregar un nuevo cliente al Banco
     public function incorporarCliente($objCliente){
+        $colexCliente = $this->getColeccionCliente();
+        $elementosCount = count($colexCliente);
+        if($elementosCount == 0){
+            $colexCliente[0] = $objCliente;
+            $this->setColeccionCliente($colexCliente);
+        }else{
+            $colexCliente[$elementosCount] = $objCliente;
+            $this->setColeccionCliente($colexCliente);
+        }
 
     }
 
 
-
-
     //Agregar una nueva Cuenta a la colección de cuentas, verificando que el cliente dueño de la cuenta es cliente del Banco
     public function incorporaCuentaCorriente($numeroCliente){
+        $totalClientes = $this->getColeccionCliente();             //PREGUNTAR QUE PASA SI NO LO ENCUENTRA...Q HACEMOS....Y LA NUEVA CUENTA DE DONDE VIENE..NO ESTA EL PARAMETRO
+        $i = 0;
+        $totalitoArray = count($totalClientes);
+        $banderin = true;
+        while ($banderin && $i < $totalitoArray){
+            $clienteParcial = $totalClientes[$i];
+            $numeroClientecito = $clienteParcial->getNroCliente();
+            if($numeroCliente == $numeroClientecito){
 
+            }
+            
+            $i++;
+        }
     }
 
 
@@ -103,7 +122,7 @@ class Banco{
     }
 
 
-    
+
     //Dado un número de Cuenta y un monto, realizar retiro.
     public function realizarRetiro($numberCuenta, $money){
 
