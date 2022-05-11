@@ -8,10 +8,10 @@ Corrientes.
 
 
 class Banco{
-    private $coleccionCuentaCorriente;
-    private $coleccionCajaAhorro;
+    private $coleccionCuentaCorriente =[];
+    private $coleccionCajaAhorro=[];
     private $ultimoValorCuentaAsignado;
-    private $coleccionCliente;
+    private $coleccionCliente=[];
 
     public function __construct($arrayCtaCte, $arrayCajaAhorro,$ultValorCuenta,$arrayCliente){
         $this->coleccionCuentaCorriente = $arrayCtaCte;
@@ -21,7 +21,7 @@ class Banco{
 
         
     }
-
+    //variable que contiene una colección de instancias de la clase Cuentas Corrientes.
     public function getColeccionCuentaCorriente(){
         return $this->coleccionCuentaCorriente;
     }
@@ -30,6 +30,7 @@ class Banco{
         $this->coleccionCuentaCorriente = $arrayCtaCte;
     }
 
+    //variable que contiene una colección de instancias de la clase Caja de Ahorro
     public function getColeccionCajaAhorro(){
         return $this->coleccionCajaAhorro;
     }
@@ -38,6 +39,7 @@ class Banco{
         $this->coleccionCajaAhorro = $arrayCajaAhorro;
     }
 
+    //variable que contiene el ultimo valor asignado a una cuenta del banco
     public function getUltimoValorCuentaAsignado(){
         return $this->ultimoValorCuentaAsignado;
     }
@@ -46,6 +48,7 @@ class Banco{
         $this->ultimoValorCuentaAsignado = $ultValorCuenta;
     }
 
+    //variable que contiene una colección de instancias de la clase Cliente
     public function getColeccionCliente(){
         return $this->coleccionCliente;
     }
@@ -71,5 +74,9 @@ class Banco{
         ////////////////////////// ";
         return $info;
     }
+
+
+    
+    
 
 }
